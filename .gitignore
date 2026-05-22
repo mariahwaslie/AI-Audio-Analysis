@@ -1,0 +1,6 @@
+venv/
+*.mp4
+*.m3u8
+*.docx
+*.mp3
+.env

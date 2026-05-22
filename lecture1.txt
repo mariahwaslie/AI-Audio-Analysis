@@ -1,0 +1,1544 @@
+
+Hello everyone.
+This is lesson one
+
+of lecture on E. In
+this series of lessons,
+
+
+we will be talking
+about them.
+
+4
+00:00:10,800 --> 00:00:13,959
+Hardware. This course is
+
+5
+00:00:13,959 --> 00:00:18,409
+really about
+computer networking.
+
+6
+00:00:18,409 --> 00:00:21,190
+Before we start talking
+about networking,
+
+7
+00:00:21,190 --> 00:00:22,689
+it's good to get a feel
+
+8
+00:00:22,689 --> 00:00:25,929
+for the hardware
+and how it
+
+9
+00:00:25,929 --> 00:00:30,730
+interacts with the
+operating system
+
+10
+00:00:30,730 --> 00:00:32,689
+and the architecture
+of the hardware,
+
+11
+00:00:32,689 --> 00:00:35,129
+and how it actually
+ultimately ends up
+
+12
+00:00:35,129 --> 00:00:39,050
+working with the systems
+across the world.
+
+13
+00:00:39,050 --> 00:00:41,349
+As part of this series,
+
+14
+00:00:41,349 --> 00:00:42,929
+we will look at
+computer hardware.
+
+15
+00:00:42,929 --> 00:00:44,790
+We'll look at memory
+architecture,
+
+16
+00:00:44,790 --> 00:00:46,789
+we look at system
+boot process,
+
+17
+00:00:46,789 --> 00:00:48,669
+we're looking at
+operating systems,
+
+18
+00:00:48,669 --> 00:00:50,250
+and then a very brief
+
+19
+00:00:50,250 --> 00:00:52,689
+overview of
+virtual machines.
+
+20
+00:00:52,689 --> 00:00:54,789
+This is lesson one of
+
+21
+00:00:54,789 --> 00:00:58,159
+these series of lessons.
+
+22
+00:00:58,159 --> 00:01:00,310
+All right, with
+that, let's start
+
+23
+00:01:00,310 --> 00:01:02,409
+with basic
+computer hardware.
+
+24
+00:01:02,409 --> 00:01:06,269
+If you really look at
+a computer system,
+
+25
+00:01:06,269 --> 00:01:07,929
+at the core of the system,
+
+26
+00:01:07,929 --> 00:01:09,949
+there is a device
+referred to as
+
+27
+00:01:09,949 --> 00:01:12,650
+Central Processing
+Unit or CPU.
+
+28
+00:01:12,650 --> 00:01:14,469
+The job of the CPU
+
+29
+00:01:14,469 --> 00:01:16,809
+is really to perform
+computation.
+
+30
+00:01:16,809 --> 00:01:18,430
+At the end of the day,
+
+31
+00:01:18,430 --> 00:01:20,409
+everything that
+happens within
+
+32
+00:01:20,409 --> 00:01:22,789
+the computer is
+done by the CPU.
+
+33
+00:01:22,789 --> 00:01:24,490
+And the way this
+
+34
+00:01:24,490 --> 00:01:25,850
+operates is that if
+
+35
+00:01:25,850 --> 00:01:27,290
+you're really
+think about it,
+
+36
+00:01:27,290 --> 00:01:30,390
+users interact
+with the CPU.
+
+37
+00:01:30,390 --> 00:01:33,489
+Cpu interacts with memory
+
+38
+00:01:33,489 --> 00:01:35,669
+to retrieve and
+store information,
+
+39
+00:01:35,669 --> 00:01:37,870
+and then the CPU uses
+
+40
+00:01:37,870 --> 00:01:39,390
+communication devices to
+
+41
+00:01:39,390 --> 00:01:41,969
+interact with other CPU's.
+
+42
+00:01:41,969 --> 00:01:44,270
+If you look at one end of
+
+43
+00:01:44,270 --> 00:01:47,190
+this stream is
+input devices.
+
+44
+00:01:47,190 --> 00:01:49,890
+These input devices are
+things like keyboard,
+
+45
+00:01:49,890 --> 00:01:52,370
+mouse, scanners,
+blah, blah, blah.
+
+46
+00:01:52,370 --> 00:01:54,270
+And these devices are
+
+47
+00:01:54,270 --> 00:01:56,690
+used to really allow us as
+
+48
+00:01:56,690 --> 00:01:58,570
+human beings to
+interact with
+
+49
+00:01:58,570 --> 00:02:01,069
+the systems central
+processing unit.
+
+50
+00:02:01,069 --> 00:02:03,770
+Hence, they're referred
+to as input devices.
+
+51
+00:02:03,770 --> 00:02:06,710
+At the other end, we
+have output devices such
+
+52
+00:02:06,710 --> 00:02:08,289
+as printers and monitors
+
+53
+00:02:08,289 --> 00:02:09,609
+and so on and so forth.
+
+54
+00:02:09,609 --> 00:02:12,289
+And the objective here is
+
+55
+00:02:12,289 --> 00:02:15,550
+basically for the CPU to
+
+56
+00:02:15,550 --> 00:02:18,650
+be able to communicate
+back to the users,
+
+57
+00:02:18,650 --> 00:02:21,549
+to us, to these devices.
+
+58
+00:02:21,549 --> 00:02:23,649
+As such, you can really
+
+59
+00:02:23,649 --> 00:02:24,809
+think about it this way.
+
+60
+00:02:24,809 --> 00:02:28,689
+Like for example here
+as I make this drawing.
+
+61
+00:02:28,689 --> 00:02:30,310
+As I'm making this drawing
+
+62
+00:02:30,310 --> 00:02:32,129
+on the screen and
+you're observing it,
+
+63
+00:02:32,129 --> 00:02:33,930
+really what's
+really happening is
+
+64
+00:02:33,930 --> 00:02:38,009
+that the stylus that I'm
+
+65
+00:02:38,009 --> 00:02:41,030
+using is an input
+device by which
+
+66
+00:02:41,030 --> 00:02:42,389
+the actual position of
+
+67
+00:02:42,389 --> 00:02:44,869
+the maps is grabbed
+by the CPU.
+
+68
+00:02:44,869 --> 00:02:48,669
+The CPU perform
+processing and then uses
+
+69
+00:02:48,669 --> 00:02:50,709
+the monitor to display
+
+70
+00:02:50,709 --> 00:02:53,850
+the position as a black
+dot on the screen.
+
+71
+00:02:53,850 --> 00:02:56,910
+That's basically how
+the input goes through
+
+72
+00:02:56,910 --> 00:02:59,069
+the processing unit
+gets processed and
+
+73
+00:02:59,069 --> 00:03:00,370
+then maybe produced
+
+74
+00:03:00,370 --> 00:03:02,169
+at the output to the user.
+
+75
+00:03:02,169 --> 00:03:04,650
+Now, for the
+CPU to operate,
+
+76
+00:03:04,650 --> 00:03:06,230
+it also needs to operate
+
+77
+00:03:06,230 --> 00:03:07,709
+with storage devices.
+
+78
+00:03:07,709 --> 00:03:10,090
+These are devices
+that it can store
+
+79
+00:03:10,090 --> 00:03:13,469
+information on, retrieve
+information from.
+
+80
+00:03:13,469 --> 00:03:16,389
+And that information
+could be data,
+
+81
+00:03:16,389 --> 00:03:18,530
+could be programs,
+could be anything.
+
+82
+00:03:18,530 --> 00:03:21,669
+These are basic
+storage devices that
+
+83
+00:03:21,669 --> 00:03:26,309
+the CPU uses
+really and work on
+
+84
+00:03:26,309 --> 00:03:29,549
+the retrieved
+information Then
+
+85
+00:03:29,710 --> 00:03:34,329
+interest to us is
+communication devices.
+
+86
+00:03:34,329 --> 00:03:37,190
+These are devices that
+are used to really
+
+87
+00:03:37,190 --> 00:03:40,529
+allow for CPUs to
+communicate to other CPU.
+
+88
+00:03:40,529 --> 00:03:42,610
+If you can think
+of for example,
+
+89
+00:03:42,610 --> 00:03:45,249
+a network interface
+card is something
+
+90
+00:03:45,249 --> 00:03:46,970
+that allows one computer
+
+91
+00:03:46,970 --> 00:03:48,550
+to talk to
+another computer.
+
+92
+00:03:48,550 --> 00:03:50,970
+Now an example
+here is that you
+
+93
+00:03:50,970 --> 00:03:53,449
+might think of
+another CPU sitting
+
+94
+00:03:53,449 --> 00:03:55,069
+somewhere here
+where it has
+
+95
+00:03:55,069 --> 00:03:56,969
+its own communication
+devices,
+
+96
+00:03:56,969 --> 00:03:59,989
+correct devices.
+
+97
+00:03:59,989 --> 00:04:04,529
+Then there the two devices
+interact with each
+
+98
+00:04:04,529 --> 00:04:07,049
+other and then internally
+
+99
+00:04:07,049 --> 00:04:09,269
+then they talk to
+their own CPU.
+
+100
+00:04:09,269 --> 00:04:11,369
+The CPU interacts back
+
+101
+00:04:11,369 --> 00:04:13,410
+and forth with
+the Com devices.
+
+102
+00:04:13,410 --> 00:04:16,369
+Devices interact with
+other Com devices,
+
+103
+00:04:16,369 --> 00:04:20,409
+and then that communication
+gets established.
+
+104
+00:04:20,409 --> 00:04:24,150
+Today through these
+series of lessons,
+
+105
+00:04:24,150 --> 00:04:26,570
+we will really talk
+about this part.
+
+106
+00:04:26,570 --> 00:04:29,089
+A very quick sequence of
+
+107
+00:04:29,089 --> 00:04:30,629
+four lessons will take
+
+108
+00:04:30,629 --> 00:04:32,350
+us through understanding
+this part.
+
+109
+00:04:32,350 --> 00:04:34,410
+And then the rest
+of the semester,
+
+110
+00:04:34,410 --> 00:04:37,129
+we'll talk about
+really this part.
+
+111
+00:04:37,129 --> 00:04:40,310
+But embedded as this
+part is part of
+
+112
+00:04:40,310 --> 00:04:41,909
+the operating system that
+
+113
+00:04:41,909 --> 00:04:44,069
+are involved in the
+communications.
+
+114
+00:04:44,069 --> 00:04:45,509
+All right, so
+with that, let's
+
+115
+00:04:45,509 --> 00:04:47,209
+kind of take
+the next step.
+
+116
+00:04:47,209 --> 00:04:49,089
+If you looked at a
+computer device,
+
+117
+00:04:49,089 --> 00:04:51,110
+you would see
+that a computer,
+
+118
+00:04:51,110 --> 00:04:53,509
+you will see a
+series of devices
+
+119
+00:04:53,509 --> 00:04:56,710
+that are utilized
+by, by the computer.
+
+120
+00:04:56,710 --> 00:04:58,369
+At the heart of it there's
+
+121
+00:04:58,369 --> 00:05:00,160
+what's referred to
+as the motherboard.
+
+122
+00:05:00,160 --> 00:05:04,409
+The motherboard holds
+basically the CPU.
+
+123
+00:05:04,409 --> 00:05:06,210
+So the central
+processing unit
+
+124
+00:05:06,210 --> 00:05:08,029
+is sitting somewhere
+on the CPU.
+
+125
+00:05:08,029 --> 00:05:11,250
+And then the CPU
+then interacts
+
+126
+00:05:11,250 --> 00:05:12,950
+through the motherboard to
+
+127
+00:05:12,950 --> 00:05:14,689
+all of these
+other devices.
+
+128
+00:05:14,689 --> 00:05:15,970
+The CPU talks to
+
+129
+00:05:15,970 --> 00:05:17,990
+the memory through
+the motherboard.
+
+130
+00:05:17,990 --> 00:05:19,930
+It talks to the hardware
+
+131
+00:05:19,930 --> 00:05:22,070
+hard drives through
+the motherboard.
+
+132
+00:05:22,070 --> 00:05:23,449
+It talks to network
+
+133
+00:05:23,449 --> 00:05:25,710
+interface code to
+the motherboard,
+
+134
+00:05:25,710 --> 00:05:27,029
+and so on and so forth.
+
+135
+00:05:27,029 --> 00:05:28,910
+So basically at the core,
+
+136
+00:05:28,910 --> 00:05:31,549
+you've got the motherboard
+that has the CPU,
+
+137
+00:05:31,549 --> 00:05:35,890
+and then the motherboard
+provides pathways of
+
+138
+00:05:35,890 --> 00:05:38,169
+communication
+between the CPU
+
+139
+00:05:38,169 --> 00:05:40,430
+and all the other devices
+
+140
+00:05:40,430 --> 00:05:41,769
+that we just talked about,
+
+141
+00:05:41,769 --> 00:05:43,390
+like the monitor, like
+
+142
+00:05:43,390 --> 00:05:45,269
+the keyboard,
+like the memory,
+
+143
+00:05:45,269 --> 00:05:47,070
+like the network
+interface card,
+
+144
+00:05:47,070 --> 00:05:48,709
+and all of those
+things that we just
+
+145
+00:05:48,709 --> 00:05:51,009
+discussed in the
+previous slide.
+
+146
+00:05:51,009 --> 00:05:53,110
+All right, so now
+I want to spend
+
+147
+00:05:53,110 --> 00:05:54,650
+a little time talking
+about this slide.
+
+148
+00:05:54,650 --> 00:05:56,869
+This is a little bit of
+a complicated slide,
+
+149
+00:05:56,869 --> 00:05:58,390
+so I'm going
+to try to take
+
+150
+00:05:58,390 --> 00:06:00,250
+it one step at a time.
+
+151
+00:06:00,250 --> 00:06:01,810
+Now, before we
+get in here,
+
+152
+00:06:01,810 --> 00:06:03,029
+if you really think about
+
+153
+00:06:03,029 --> 00:06:04,470
+a central processing unit.
+
+154
+00:06:04,470 --> 00:06:06,490
+So the CPU stands
+right here.
+
+155
+00:06:06,490 --> 00:06:08,029
+So let's focus
+our attention
+
+156
+00:06:08,029 --> 00:06:10,230
+first on the central
+processing unit.
+
+157
+00:06:10,230 --> 00:06:11,949
+And if you look
+at the CPU,
+
+158
+00:06:11,949 --> 00:06:13,870
+the main job of the CPU
+
+159
+00:06:13,870 --> 00:06:15,330
+is really to constantly
+
+160
+00:06:15,330 --> 00:06:18,789
+compute, perform
+operations correct.
+
+161
+00:06:18,789 --> 00:06:20,470
+So if you actually
+looked at
+
+162
+00:06:20,470 --> 00:06:22,289
+a central processing unit
+
+163
+00:06:22,289 --> 00:06:25,190
+and if you observed
+its behavior,
+
+164
+00:06:25,190 --> 00:06:27,729
+you'd see as soon as you
+turn the machine on,
+
+165
+00:06:27,729 --> 00:06:29,169
+the CPU goes through
+
+166
+00:06:29,169 --> 00:06:31,089
+this infinite
+loop, correct?
+
+167
+00:06:31,089 --> 00:06:32,310
+And so it's like it's
+
+168
+00:06:32,310 --> 00:06:34,769
+a never ending
+sequence of steps.
+
+169
+00:06:34,769 --> 00:06:37,014
+So as part of the
+sequence of steps,
+
+170
+00:06:37,014 --> 00:06:38,559
+the CPU does a few things.
+
+171
+00:06:38,559 --> 00:06:39,859
+The first thing
+it's going to do,
+
+172
+00:06:39,859 --> 00:06:41,499
+it's going to do a fetch.
+
+173
+00:06:41,499 --> 00:06:43,659
+So what that means is
+
+174
+00:06:43,659 --> 00:06:46,060
+that it's going to get
+the next instruction.
+
+175
+00:06:46,060 --> 00:06:47,780
+So think of it like this,
+
+176
+00:06:47,780 --> 00:06:50,220
+all programs, any
+applications,
+
+177
+00:06:50,220 --> 00:06:51,620
+any apps that you run,
+
+178
+00:06:51,620 --> 00:06:54,700
+it's basically a sequence
+of instructions.
+
+179
+00:06:54,700 --> 00:06:57,160
+And the goal of
+the CPU is to
+
+180
+00:06:57,160 --> 00:07:00,199
+identify where is the
+next instruction,
+
+181
+00:07:00,199 --> 00:07:02,119
+grab that next
+instruction,
+
+182
+00:07:02,119 --> 00:07:03,500
+and then figure
+out what it
+
+183
+00:07:03,500 --> 00:07:05,159
+needs to do and
+then execute it.
+
+184
+00:07:05,159 --> 00:07:08,100
+Do the tasks. Fetch
+is the step that
+
+185
+00:07:08,100 --> 00:07:09,680
+the CPU goes out there
+
+186
+00:07:09,680 --> 00:07:11,780
+and grabs the instruction,
+
+187
+00:07:11,780 --> 00:07:13,680
+then following by that,
+
+188
+00:07:13,680 --> 00:07:16,520
+then the CPU has to
+decode that instruction.
+
+189
+00:07:16,520 --> 00:07:19,320
+And that's referred
+to as decode.
+
+190
+00:07:19,480 --> 00:07:22,440
+What it means is that
+the CPU has to look
+
+191
+00:07:22,440 --> 00:07:24,740
+at the instruction
+and ask,
+
+192
+00:07:24,740 --> 00:07:25,659
+what is it that
+
+193
+00:07:25,659 --> 00:07:28,020
+this instruction
+is trying to add?
+
+194
+00:07:28,020 --> 00:07:30,299
+Something is trying
+to multiply,
+
+195
+00:07:30,299 --> 00:07:34,019
+something that
+the instruction
+
+196
+00:07:34,019 --> 00:07:35,720
+is telling the CPU to do.
+
+197
+00:07:35,720 --> 00:07:37,879
+Then the next thing
+the CPU does,
+
+198
+00:07:37,879 --> 00:07:40,299
+the CPU executes
+the instruction.
+
+199
+00:07:40,299 --> 00:07:45,680
+It in executing
+the instruction
+
+200
+00:07:45,680 --> 00:07:47,400
+means that it
+actually performs
+
+201
+00:07:47,400 --> 00:07:49,220
+the task, it
+runs the task.
+
+202
+00:07:49,220 --> 00:07:51,140
+Now in between, it may
+
+203
+00:07:51,140 --> 00:07:54,280
+also have a few
+additional cycles,
+
+204
+00:07:54,280 --> 00:07:59,919
+and this would be memory
+cycles, Mem cycles.
+
+205
+00:08:00,720 --> 00:08:05,940
+You could think of it
+where the CPU may say,
+
+206
+00:08:05,940 --> 00:08:07,899
+well, I got the
+instruction, I fetched it,
+
+207
+00:08:07,899 --> 00:08:10,200
+I decoded it, I
+need to execute it.
+
+208
+00:08:10,200 --> 00:08:11,439
+But before I execute it,
+
+209
+00:08:11,439 --> 00:08:13,059
+I need to get,
+for example,
+
+210
+00:08:13,059 --> 00:08:15,260
+the two data
+points that I need
+
+211
+00:08:15,260 --> 00:08:17,619
+to work on before it
+actually executes.
+
+212
+00:08:17,619 --> 00:08:19,780
+It needs to get,
+for example,
+
+213
+00:08:19,780 --> 00:08:22,480
+the two numbers that
+it needs to add.
+
+214
+00:08:22,480 --> 00:08:24,540
+Now the most important
+thing is that
+
+215
+00:08:24,540 --> 00:08:26,740
+this happens
+over and over,
+
+216
+00:08:26,740 --> 00:08:28,499
+and over and over.
+
+217
+00:08:28,499 --> 00:08:31,119
+In fact, that's
+all that the CPU
+
+218
+00:08:31,119 --> 00:08:32,540
+does from the moment
+
+219
+00:08:32,540 --> 00:08:34,059
+that you powered
+the system on.
+
+220
+00:08:34,059 --> 00:08:36,400
+The CPU's wakes up.
+
+221
+00:08:36,400 --> 00:08:38,959
+And its core job is to
+
+222
+00:08:38,959 --> 00:08:41,640
+run one instruction
+at a time.
+
+223
+00:08:41,640 --> 00:08:43,759
+Now, there are some
+CPUs that have
+
+224
+00:08:43,759 --> 00:08:45,880
+multicores and
+we won't spend
+
+225
+00:08:45,880 --> 00:08:48,320
+too much time on at all.
+
+226
+00:08:48,320 --> 00:08:49,799
+Those systems would have
+
+227
+00:08:49,799 --> 00:08:51,660
+multiple loops
+because they've
+
+228
+00:08:51,660 --> 00:08:53,080
+got multiple cores
+
+229
+00:08:53,080 --> 00:08:55,059
+that can run
+simultaneously.
+
+230
+00:08:55,059 --> 00:08:56,679
+But even if you do, it's
+
+231
+00:08:56,679 --> 00:08:58,540
+like having
+multiple runners.
+
+232
+00:08:58,540 --> 00:09:00,500
+Job of the CPU is to grab
+
+233
+00:09:00,500 --> 00:09:02,680
+an instruction
+decoded executed.
+
+234
+00:09:02,680 --> 00:09:04,819
+That's basically with.
+
+235
+00:09:04,819 --> 00:09:06,499
+The next question
+is what do you
+
+236
+00:09:06,499 --> 00:09:08,860
+mean by instructions
+correct?
+
+237
+00:09:08,860 --> 00:09:10,739
+Instruct to
+understand that.
+
+238
+00:09:10,739 --> 00:09:14,300
+Next we're going to have
+a very brief review
+
+239
+00:09:14,300 --> 00:09:16,119
+or overview of what it
+
+240
+00:09:16,119 --> 00:09:18,059
+means when we talk about
+
+241
+00:09:18,059 --> 00:09:20,479
+instructions and bits and
+
+242
+00:09:20,479 --> 00:09:21,659
+bytes and stuff like that.
+
+243
+00:09:21,659 --> 00:09:25,440
+So everything in
+a computer system
+
+244
+00:09:25,440 --> 00:09:27,819
+is really represented and
+
+245
+00:09:27,819 --> 00:09:31,000
+processed as what's
+referred to as binary.
+
+246
+00:09:31,000 --> 00:09:34,099
+Binary basically
+means two and that
+
+247
+00:09:34,099 --> 00:09:37,699
+means you're operating
+in either zero or one.
+
+248
+00:09:37,699 --> 00:09:39,900
+That is nothing internal
+
+249
+00:09:39,900 --> 00:09:42,039
+to a system
+operates other than
+
+250
+00:09:42,039 --> 00:09:45,320
+operating on 01
+where the 01 are
+
+251
+00:09:45,320 --> 00:09:46,679
+freely represented
+
+252
+00:09:46,679 --> 00:09:49,380
+by positive and
+negative voltages.
+
+253
+00:09:49,380 --> 00:09:51,539
+Correct. So you could
+say that a binary
+
+254
+00:09:51,539 --> 00:09:53,380
+zero corresponds to 0 v,
+
+255
+00:09:53,380 --> 00:09:54,640
+somewhere on the system.
+
+256
+00:09:54,640 --> 00:09:57,320
+One corresponds to
+say, five volt.
+
+257
+00:09:57,320 --> 00:09:58,580
+Correct, On the system.
+
+258
+00:09:58,580 --> 00:10:00,159
+So think of it this way,
+
+259
+00:10:00,159 --> 00:10:02,799
+it's just
+basically because
+
+260
+00:10:02,799 --> 00:10:04,440
+these are digital
+computers,
+
+261
+00:10:04,440 --> 00:10:06,499
+you could switch
+from one kind of
+
+262
+00:10:06,499 --> 00:10:08,940
+voltage to another
+kind of voltage and as
+
+263
+00:10:08,940 --> 00:10:12,459
+such it could go 0-1
+
+264
+00:10:12,459 --> 00:10:15,179
+or you will see like when
+
+265
+00:10:15,179 --> 00:10:17,559
+you store information
+it would be
+
+266
+00:10:17,559 --> 00:10:19,720
+allocate or
+accumulation of
+
+267
+00:10:19,720 --> 00:10:21,975
+charges which
+corresponds to a one.
+
+268
+00:10:21,975 --> 00:10:24,570
+An absence of that
+corresponding to zero.
+
+269
+00:10:24,570 --> 00:10:26,689
+Or if you look at
+magnetic devices,
+
+270
+00:10:26,689 --> 00:10:30,729
+it corresponds to
+an orientation of
+
+271
+00:10:30,729 --> 00:10:33,689
+a very small
+magnet as being a
+
+272
+00:10:33,689 --> 00:10:36,650
+one and a different
+orientation being a zero.
+
+273
+00:10:36,650 --> 00:10:38,510
+In any case, we
+operate in binary.
+
+274
+00:10:38,510 --> 00:10:41,129
+So each of these storage,
+
+275
+00:10:41,129 --> 00:10:43,529
+so think of it as a
+place where you can
+
+276
+00:10:43,529 --> 00:10:46,289
+store a value
+of zero or one.
+
+277
+00:10:46,289 --> 00:10:47,870
+So you could say,
+think of them as
+
+278
+00:10:47,870 --> 00:10:48,770
+like variables if you
+
+279
+00:10:48,770 --> 00:10:50,049
+want to think of
+it like that.
+
+280
+00:10:50,049 --> 00:10:51,830
+A variable in
+this environment
+
+281
+00:10:51,830 --> 00:10:53,769
+can either have a
+zero or one in it.
+
+282
+00:10:53,769 --> 00:10:55,910
+Okay? And one single one
+
+283
+00:10:55,910 --> 00:10:58,370
+of these is referred
+to as a bit.
+
+284
+00:10:58,370 --> 00:11:02,309
+One bit can have
+
+285
+00:11:02,309 --> 00:11:07,809
+either can either be a
+zero or one Correct.
+
+286
+00:11:07,809 --> 00:11:10,230
+A binary bit. Okay.
+
+287
+00:11:10,230 --> 00:11:12,030
+So with that in mind,
+
+288
+00:11:12,030 --> 00:11:13,909
+we can spend a
+little time looking
+
+289
+00:11:13,909 --> 00:11:18,569
+at how does that lead
+to information correct.
+
+290
+00:11:18,569 --> 00:11:20,310
+For example, let's
+say somebody
+
+291
+00:11:20,310 --> 00:11:22,209
+asked you to represent
+colors, correct?
+
+292
+00:11:22,209 --> 00:11:23,709
+So I want to
+represent color.
+
+293
+00:11:23,709 --> 00:11:25,369
+And if I give you one bit,
+
+294
+00:11:25,369 --> 00:11:31,150
+given one bit,
+given one bit,
+
+295
+00:11:31,670 --> 00:11:39,849
+how many unique pieces of
+
+296
+00:11:39,849 --> 00:11:49,509
+information you
+can represent?
+
+297
+00:11:50,550 --> 00:11:52,749
+If you really
+think about it,
+
+298
+00:11:52,749 --> 00:11:55,770
+given one bit, example,
+
+299
+00:11:55,770 --> 00:11:57,589
+let's just say example.
+
+300
+00:11:57,589 --> 00:11:59,670
+And we'll say color.
+
+301
+00:11:59,670 --> 00:12:02,430
+How many different
+colors can I represent?
+
+302
+00:12:02,430 --> 00:12:03,889
+Well, if I put one bit,
+
+303
+00:12:03,889 --> 00:12:07,169
+one bit can either be a
+zero or can be a one.
+
+304
+00:12:07,169 --> 00:12:09,890
+Therefore, I can only
+save two colors.
+
+305
+00:12:09,890 --> 00:12:11,870
+The answer to this is two,
+
+306
+00:12:11,870 --> 00:12:14,609
+meaning two unique
+pieces of information.
+
+307
+00:12:14,609 --> 00:12:16,889
+Now, I could say zero is
+
+308
+00:12:16,889 --> 00:12:21,909
+black and one is white.
+
+309
+00:12:22,030 --> 00:12:25,650
+Or I could say
+zero is red,
+
+310
+00:12:25,650 --> 00:12:30,550
+one is blue or correct.
+
+311
+00:12:30,550 --> 00:12:33,950
+So you could which
+one, how you allocate?
+
+312
+00:12:33,950 --> 00:12:36,409
+That really depends
+on what the task is.
+
+313
+00:12:36,409 --> 00:12:38,910
+But the point is
+that with one bit,
+
+314
+00:12:38,910 --> 00:12:40,309
+you can only represent
+
+315
+00:12:40,309 --> 00:12:42,809
+two possible pieces
+of information.
+
+316
+00:12:42,809 --> 00:12:44,789
+So in this case, we
+could say, well,
+
+317
+00:12:44,789 --> 00:12:46,670
+if I had just one bit,
+
+318
+00:12:46,670 --> 00:12:49,550
+I can represent either
+black or white.
+
+319
+00:12:49,550 --> 00:12:51,650
+Okay, so now what happens
+
+320
+00:12:51,650 --> 00:12:54,029
+if I give you two
+bits, given two bits?
+
+321
+00:12:54,029 --> 00:12:58,850
+So let's say given two
+bits then how many?
+
+322
+00:12:58,850 --> 00:13:00,149
+Well, if you think about
+
+323
+00:13:00,149 --> 00:13:01,829
+it, I've got two bits.
+
+324
+00:13:01,829 --> 00:13:03,990
+Both of them can be 01
+
+325
+00:13:03,990 --> 00:13:04,949
+of them can be zero,
+
+326
+00:13:04,949 --> 00:13:06,309
+the other one can be one.
+
+327
+00:13:06,309 --> 00:13:07,829
+Then one can be one.
+
+328
+00:13:07,829 --> 00:13:09,370
+The other one can be zero,
+
+329
+00:13:09,370 --> 00:13:11,769
+or both of them are one.
+
+330
+00:13:11,769 --> 00:13:13,169
+In a sense, you could say,
+
+331
+00:13:13,169 --> 00:13:15,290
+well, there's no
+other possibilities.
+
+332
+00:13:15,290 --> 00:13:17,770
+With two bits, you
+have four correct.
+
+333
+00:13:17,770 --> 00:13:19,929
+In this case, you have
+four possibilities
+
+334
+00:13:19,929 --> 00:13:21,649
+and you could label
+them as you want.
