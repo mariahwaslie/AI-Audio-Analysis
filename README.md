@@ -18,10 +18,6 @@ The repository also includes early helper scripts for working with hosted course
 | File | Purpose |
 | --- | --- |
 | `chathelper.py` | Main Streamlit app for YouTube audio transcription and AI-generated notes. |
-| `vidinfo.py` | Reads `lecture1.txt`, generates meeting-style transcript analysis, and exports a DOCX file. |
-| `ap.py` | Extracts the first stream URL from an M3U8 file and converts it to MP3. |
-| `ai.py` | Prototype Selenium workflow for logging into and inspecting an embedded hosted lecture video. |
-| `lecture1.txt` | Example transcript used by `vidinfo.py`. |
 | `requirements.txt` | Python dependencies needed to run the project. |
 
 ## Requirements
@@ -29,7 +25,6 @@ The repository also includes early helper scripts for working with hosted course
 - Python 3.10 or newer recommended
 - An OpenAI API key
 - FFmpeg installed locally for YouTube audio conversion and audio/video processing
-- Chrome and ChromeDriver if you use the Selenium prototype in `ai.py`
 
 Python packages used by the project are listed in `requirements.txt`:
 
@@ -120,17 +115,3 @@ python ap.py
 ```
 
 This workflow requires FFmpeg to be installed on your machine.
-
-## Notes
-
-- `chathelper.py` is the most complete user-facing script in the project.
-- `ai.py` appears to be an exploratory script for a specific hosted-video login flow. It references credentials and variables that should be supplied securely before use.
-- Some scripts are prototypes and may need small updates before production use, especially around error handling, dependency pinning, and model selection.
-- Generated audio files, DOCX outputs, virtual environments, Python cache files, local environment files, and editor metadata are ignored by Git.
-
-## Roadmap Ideas
-
-- Add file upload support for local MP3 and MP4 files in the Streamlit app.
-- Save generated transcripts and notes to Markdown or DOCX.
-- Add better progress indicators and user-facing error messages.
-- Replace hard-coded model names with configuration options.
