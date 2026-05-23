@@ -41,7 +41,7 @@ def abstract_summary_extraction(transcription):
             }
         ]
     )
-    return completion.choices[0].message.content
+    return response.choices[0].message.content
 
 def key_points_extraction(transcription):
     response = client.chat.completions.create(
@@ -58,7 +58,7 @@ def key_points_extraction(transcription):
             }
         ]
     )
-    return completion.choices[0].message.content
+    return response.choices[0].message.content
 
 
 def action_item_extraction(transcription):
@@ -76,7 +76,7 @@ def action_item_extraction(transcription):
             }
         ]
     )
-    return completion.choices[0].message.content
+    return response.choices[0].message.content
 
 def sentiment_analysis(transcription):
     response = client.chat.completions.create(
@@ -93,7 +93,7 @@ def sentiment_analysis(transcription):
             }
         ]
     )
-    return completion.choices[0].message.content
+    return response.choices[0].message.content
 
 def save_as_docx(minutes, filename):
     doc = Document()

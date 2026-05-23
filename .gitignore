@@ -4,3 +4,5 @@ venv/
 *.docx
 *.mp3
 .env
+.venv/
+ai.py

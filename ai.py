@@ -17,9 +17,9 @@ import os
 
 load_dotenv()
 
+api_key = os.getenv("API")
 
-
-client =OpenAI(api_key=API)
+client =OpenAI(api_key=api_key)
 video_url= 'https://2370711-10.kaf.kaltura.com/browseandembed/index/media-redirect/entryid/1_c9jzequc/showDescription/false/showTitle/false/showTags/false/showDuration/false/showOwner/false/showUploadDate/false/playerSize/608x342/playerSkin/42909941/thumbEmbed//autoPlay//startTime//endTime/'
 output_file = "video.mp4"  # Output file name
 first_class_name = "mwPlayerContainer kdark ua-mouse ua-win ua-chrome size-medium start-state"

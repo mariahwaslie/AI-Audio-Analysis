@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 from moviepy.editor import VideoFileClip
-from pytube import YouTube
+from yt_dlp import YoutubeDL
 import os
 from dotenv import load_dotenv
 
@@ -36,19 +36,34 @@ def notes(transcription):
     return response.choices[0].message.content
 
 def download_youtube_video(url):
+    if not url:
+        return None
+
     try:
-        yt = YouTube(str(url))
+        download_options = {
+            "format": "bestaudio/best",
+            "outtmpl": "%(title)s.%(ext)s",
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "192",
+                }
+            ],
+        }
 
-        video = yt.streams.filter(only_audio=True).first()
-        output_file = video.download(output_path='')
+        with YoutubeDL(download_options) as ydl:
+            info = ydl.extract_info(str(url), download=True)
+            filename = ydl.prepare_filename(info)
 
-        base, ext = os.path.splitext(output_file)
-        new_file = base + '.mp3'
-        os.rename(output_file, new_file)
-        st.write(f'{yt.title} has been sucessfully downloaded with the file name {new_file}')
+        base, ext = os.path.splitext(filename)
+        new_file = base + ".mp3"
+        st.write(f"{info.get('title', 'Video')} has been successfully downloaded as {new_file}")
         return new_file
-    except:
-        print("connection error")
+    except Exception as error:
+        st.error("Could not download audio from that YouTube URL.")
+        st.exception(error)
+        return None
 
 
 
@@ -74,9 +89,9 @@ if yfile:
 #
 # choice = st.selectbox('What do you want to do?', ('Analyze audio/lecture', 'Draft a Document', 'Be a personal tutor'))
 # if choice == 'Analyze audio/lecture':
-# #with st.chat_message('user'):
-# # st.write('your choice is: ' + str(choice))
-#
+# with st.chat_message('user'):
+# # # st.write('your choice is: ' + str(choice))
+# #
 #     with st.chat_message('ai'):
 #         st.write('pick the filetype')
 #         filetype = st.selectbox('file type', ('none','mp3', 'mp4'))
@@ -133,5 +148,4 @@ if yfile:
 #         file= st.text_input('enter the file path of the audio file')
 #
 #
-
 
