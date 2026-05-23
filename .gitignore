@@ -1,8 +1,39 @@
-venv/
-*.mp4
-*.m3u8
-*.docx
-*.mp3
+# Environment variables and local secrets
 .env
+.env.*
+
+# Python virtual environments
+venv/
 .venv/
+env/
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Generated media and transcript outputs
+*.mp3
+*.mp4
+*.m4a
+*.webm
+*.wav
+*.m3u8
+*.part
+*.ytdl
+*.docx
+transcription.docx
+
+# Local editor and OS files
+.idea/
+.vscode/
+.DS_Store
+
+# Prototype script with local login/session details
 ai.py

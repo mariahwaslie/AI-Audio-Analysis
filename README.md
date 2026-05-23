@@ -28,7 +28,7 @@ The repository also includes early helper scripts for working with hosted course
 
 - Python 3.10 or newer recommended
 - An OpenAI API key
-- FFmpeg installed locally if you use audio/video conversion features
+- FFmpeg installed locally for YouTube audio conversion and audio/video processing
 - Chrome and ChromeDriver if you use the Selenium prototype in `ai.py`
 
 Python packages used by the project are listed in `requirements.txt`:
@@ -52,6 +52,13 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Confirm FFmpeg is available:
+
+```bash
+ffmpeg -version
+ffprobe -version
 ```
 
 Create a `.env` file in the project root:
@@ -79,6 +86,21 @@ Then open the local Streamlit URL in your browser, paste a YouTube link, and let
 
 Downloaded audio files are ignored by Git through `.gitignore`.
 
+## Troubleshooting and Lessons Learned
+
+This project depends on a few audio/video tools that can be sensitive to version changes. These are the main issues handled during setup:
+
+- `ModuleNotFoundError: No module named 'moviepy.editor'`: MoviePy 2.x changed the old `moviepy.editor` import path used by this project, so `requirements.txt` pins MoviePy to `moviepy<2`.
+- YouTube download failures with `pytube`: The downloader was changed from `pytube` to `yt-dlp` because `pytube` can break when YouTube updates its page behavior.
+- `ffprobe and ffmpeg not found`: `yt-dlp` uses FFmpeg to post-process audio into MP3. Install FFmpeg, then restart Streamlit so the running terminal can find the new command.
+- Generic `connection error` messages: The app previously hid the real downloader exception. It now displays the actual error in Streamlit to make debugging easier.
+
+On macOS, FFmpeg can be installed with Homebrew:
+
+```bash
+brew install ffmpeg
+```
+
 ## Using the Transcript Analysis Script
 
 `vidinfo.py` reads the sample transcript in `lecture1.txt`, sends it to the OpenAI API, and saves the generated analysis as `transcription.docx`.
@@ -104,6 +126,7 @@ This workflow requires FFmpeg to be installed on your machine.
 - `chathelper.py` is the most complete user-facing script in the project.
 - `ai.py` appears to be an exploratory script for a specific hosted-video login flow. It references credentials and variables that should be supplied securely before use.
 - Some scripts are prototypes and may need small updates before production use, especially around error handling, dependency pinning, and model selection.
+- Generated audio files, DOCX outputs, virtual environments, Python cache files, local environment files, and editor metadata are ignored by Git.
 
 ## Roadmap Ideas
 

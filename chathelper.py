@@ -57,14 +57,14 @@ def download_youtube_video(url):
             filename = ydl.prepare_filename(info)
 
         base, ext = os.path.splitext(filename)
-        new_file = base + ".mp3"
-        st.write(f"{info.get('title', 'Video')} has been successfully downloaded as {new_file}")
-        return new_file
+        audio_file = base + ".mp3"
+        st.write(f"{info.get('title', 'Video')} has been successfully downloaded as {audio_file}")
+        return audio_file
     except Exception as error:
         st.error("Could not download audio from that YouTube URL.")
+        st.info("If the error mentions FFmpeg or ffprobe, install FFmpeg and restart Streamlit so your terminal can find it.")
         st.exception(error)
         return None
-
 
 
 #extract audio from a video
@@ -80,7 +80,7 @@ if yfile:
     st.audio(yfile, format='audio/mp3', loop=False)
     transcription = audio(yfile)
     n = notes(transcription)
-    st.write_stream(n)
+    st.write(n)
 
 #
 # with st.chat_message('ai'):
@@ -148,4 +148,3 @@ if yfile:
 #         file= st.text_input('enter the file path of the audio file')
 #
 #
-
