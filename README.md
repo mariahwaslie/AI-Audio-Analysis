@@ -22,6 +22,7 @@ The repository also includes early helper scripts for working with hosted course
 | `ap.py` | Extracts the first stream URL from an M3U8 file and converts it to MP3. |
 | `ai.py` | Prototype Selenium workflow for logging into and inspecting an embedded hosted lecture video. |
 | `lecture1.txt` | Example transcript used by `vidinfo.py`. |
+| `requirements.txt` | Python dependencies needed to run the project. |
 
 ## Requirements
 
@@ -30,19 +31,10 @@ The repository also includes early helper scripts for working with hosted course
 - FFmpeg installed locally if you use audio/video conversion features
 - Chrome and ChromeDriver if you use the Selenium prototype in `ai.py`
 
-Python packages used by the project:
+Python packages used by the project are listed in `requirements.txt`:
 
-```txt
-streamlit
-openai
-python-dotenv
-moviepy
-pytube
-ffmpeg-python
-python-docx
-selenium
-requests
-beautifulsoup4
+```bash
+pip install -r requirements.txt
 ```
 
 ## Setup
@@ -59,7 +51,7 @@ source venv/bin/activate
 Install dependencies:
 
 ```bash
-pip install streamlit openai python-dotenv moviepy pytube ffmpeg-python python-docx selenium requests beautifulsoup4
+pip install -r requirements.txt
 ```
 
 Create a `.env` file in the project root:
@@ -115,7 +107,6 @@ This workflow requires FFmpeg to be installed on your machine.
 
 ## Roadmap Ideas
 
-- Add a `requirements.txt` file for easier dependency installation.
 - Add file upload support for local MP3 and MP4 files in the Streamlit app.
 - Save generated transcripts and notes to Markdown or DOCX.
 - Add better progress indicators and user-facing error messages.
